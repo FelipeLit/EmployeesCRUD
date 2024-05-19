@@ -1,0 +1,62 @@
+@{
+    ViewData["Title"] = "Deatalles empleado";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div>
+                <a class="btn btn-success" asp-action="Create" asp-controller="Employees">Registar nuevo empleado</a>
+            </div>
+
+            <div>
+                <a class="btn btn-primary mt-3" asp-action="Index" asp-controller="Employees">Listar empleados</a>
+            </div>
+        </div>
+
+    <div class="col-md-10 d-flex justify-content-center align-items-center flex-column">
+        <div class="card">
+            <div class="card-body">
+                <img src="@Model.ProfilePicture" alt="@Model.ProfilePicture" width="200px">
+                <p>@Model.Names</p>
+                <p>@Model.Email</p>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4"><div><p>Telefono: @Model.Phone</p> </div></div>
+                    <div class="col-md-4"><div><p>Direccion:  @Model.Address</p></div></div>
+                    <div class="col-md-4"><div><p>Fecha nacimiento:@Model.BirthDate</p></div></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4"><div><p>Genero: @Model.Gender</p> </div></div>
+                    <div class="col-md-4"><div><p>estado civil:  @Model.CivilStatus</p></div></div>
+                    <div class="col-md-4"><div><p>Salario deseado:@Model.Salary</p></div></div>
+                </div>
+
+                  <div class="row">
+                    <div class="col-md-4"><div><p>Titulo: @Model.AcademicTitle</p> </div></div>
+                    <div class="col-md-4"><div><p>Idiomas:  @Model.Languages</p></div></div>
+                    <div class="col-md-4"><div><p>Area:@Model.Area</p></div></div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <p>Acerca de: </p>
+                    </div>
+                    <div class="col-md-9">
+                        <p>@Model.About</p>
+                    </div>
+                </div>
+
+                <div>
+                    <form action="">
+                        <a href="@Model.Cv" download="@Model.Cv" class="btn btn-primary">Descargar Curriculum Vitae</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+</div>
+
+

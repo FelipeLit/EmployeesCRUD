@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container">
+    <div class="row">
+    
+    <div class="col-md-2">
+        <div>
+            <a class="btn btn-success" asp-action="Create" asp-controller="Jobs">Crear oferta de empleo</a>
+        </div>
+
+        <div>
+            <a class="btn btn-primary mt-3" asp-action="Index" asp-controller="Jobs">Listado de ofertas</a>
+        </div>
+    </div>
+
+    <div class="col-md-10">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <form class="d-flex justify-content-end align-items-end" role="search" method="get" asp-action="Index" asp-controller="Jobs">
+                    <input class="form-control me-2" type="text" placeholder="Buscar" name="search">
+                    <input class="btn btn-outline-success" type="submit" value="Buscar">
+                </form>
+            </div>
+        </nav>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre empresa</th>
+                    <th scope="col">Oferta</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Salario</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody class="border-secondary">
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.NameCompany</td>
+                        <td>@item.OfferTitle</td>
+                        <td>@item.Description</td>
+                        <td>@item.Salary</td>
+                        <td>
+                            <a class="btn btn-primary" asp-action="Details" asp-controller="Jobs" asp-route-id="@item.Id">Detalles</a>
+                            <a class="btn btn-success" asp-action="Edit" asp-controller="Jobs" asp-route-id="@item.Id">Editar</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-controller="Jobs" asp-route-id="@item.Id">Eliminar</a>
+                        </td>
+                    </tr>
+                }       
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+</div>

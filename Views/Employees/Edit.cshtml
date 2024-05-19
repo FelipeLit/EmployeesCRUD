@@ -1,0 +1,200 @@
+@{
+    ViewData["Title"] = "Editar empleado";
+}
+@model Employees;
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div>
+                <a class="btn btn-success" asp-action="Create" asp-controller="Employees">Registar nuevo empleado</a>
+            </div>
+
+            <div>
+                <a class="btn btn-primary mt-3" asp-action="Index" asp-controller="Employees">Listar empleados</a>
+            </div>
+        </div>
+
+        <div class="col-md-10 d-flex">
+            <form class="form-control" asp-action="EditJobs" asp-route-id="@Model.Id" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Nombres</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Names" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Apellidos</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="LastNames" class="form-control">
+                        </div>
+                    </div>
+
+                         <div class="col-md-4">
+                        <div>
+                            <label for="">Correo</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Email" class="form-control" type="email">
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Fecha nacimiento</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="BirthDate" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Genero</label>
+                        </div>
+
+                        <div>
+                            <select asp-for="Gender" class="form-select">
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Telefono</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Phone" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Direccion</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Address" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Estado civil</label>
+                        </div>
+
+                        <div>
+                            <select asp-for="CivilStatus" class="form-select">
+                                <option value="soltero">Soltero</option>
+                                <option value="casado">Casado</option>
+                                <option value="union libre">Union libre</option>
+                                <option value="separado">Separado</option>
+                                <option value="divorciado">Divorciado</option>
+                                <option value="viudo">Viudo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Salrio deseado</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Salary" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Titulo academico</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="AcademicTitle" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Area</label>
+                        </div>
+
+                        <div>
+                             <input asp-for="Area" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Idiomas</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Languages" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10">
+                        <div>
+                            <label for="">Acerca de</label>
+                        </div>
+
+                        <div>
+                            <textarea asp-for="About"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div>
+                            <label for="">Foto</label>
+                        </div>
+
+                        <div>
+                            <input type="file" asp-for="ProfilePicture" class="form-control" name="archivo">
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div>
+                            <label for="">Hoja de vida</label>
+                        </div>
+
+                        <div>
+                            <input type="file" asp-for="Cv" class="form-control" name="archivo">
+                        </div>
+                    </div>
+
+                       <div class="col-md-10 mt-3">
+                        <button class="btn btn-success">Editar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

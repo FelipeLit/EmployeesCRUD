@@ -1,0 +1,130 @@
+@{
+    ViewData["Title"] = "Crear empleo";
+}
+@model Jobs;
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div>
+                <a class="btn btn-success" asp-action="Create" asp-controller="Jobs">Crear oferta de empleo</a>
+            </div>
+
+            <div>
+                <a class="btn btn-primary mt-3" asp-action="Index" asp-controller="Jobs">Listado de ofertas</a>
+            </div>
+        </div>
+
+        <div class="col-md-10 d-flex">
+            <form class="form-control" asp-action="CreateJobs" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Nombre de la empresa</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="NameCompany" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Logo de la empresa</label>
+                        </div>
+
+                        <div>
+                            <input type="file" asp-for="LogoCompany" class="form-control" name="archivo">
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Titulo de la oferta</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="OfferTitle" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Pais</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Country" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Salario</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Salary" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Vacantes</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Positions" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Idiomas</label>
+                        </div>
+
+                        <div>
+                            <input asp-for="Languages" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div>
+                            <label for="">Estado de la oferta</label>
+                        </div>
+
+                        <div>
+                            <select asp-for="Status" id="" class="form-select">
+                                <option value="activo">Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 mt-4">
+                        <div>
+                            <label for="">Descripcion</label>
+                        </div>
+
+                        <div>
+                            <textarea asp-for="Description"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 mt-3">
+                        <button class="btn btn-success">Crear</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

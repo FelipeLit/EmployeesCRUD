@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Deatalles empleo";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div>
+                <a class="btn btn-success" asp-action="Create" asp-controller="Jobs">Crear oferta de empleo</a>
+            </div>
+
+            <div>
+                <a class="btn btn-primary mt-3" asp-action="Index" asp-controller="Jobs">Listado de ofertas</a>
+            </div>
+        </div>
+
+        <div class="col-md-10 d-flex">
+            <div class="card">
+                <div class="card-body">
+                    <img src="@Model.LogoCompany" alt="@Model.LogoCompany" width="100px">
+                    <p>@Model.OfferTitle</p>
+                    <p>@Model.NameCompany</p>
+                    <p>Salario <span>@Model.Salary</span></p>
+                    <p>posiciones: <span> @Model.Positions</span></p>
+                    <p>Pais: <span>@Model.Country</span> </p>
+                    <p>Idiomas: <span>@Model.Languages</span></p>
+                    <p>Description: <span>@Model.Description</span></p>
+                    <a class="btn btn-primary" asp-action="Index" asp-controller="Jobs">Volver</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
